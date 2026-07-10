@@ -5,9 +5,7 @@ services:
       APP_PORT: 8080
 
   server:
-    # TODO: replace with your published image (and ideally pin a digest), e.g.
-    # ghcr.io/gibe9000/longevity-platform:1.0.0@sha256:<digest>
-    image: ghcr.io/gibe9000/longevity-platform:1.0.0
+    image: ghcr.io/gibe9000/longevity-platform:1.0.0@sha256:545e7bb2f66b34540b0d4c45d0765c3a37bcdcbc08ab1e4c9c1eaef9862f00b9
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:
