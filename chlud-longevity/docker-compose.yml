@@ -9,7 +9,7 @@ services:
       PROXY_AUTH_WHITELIST: "/api/*"
 
   server:
-    image: ghcr.io/gibe9000/longevity-platform:1.0.0@sha256:545e7bb2f66b34540b0d4c45d0765c3a37bcdcbc08ab1e4c9c1eaef9862f00b9
+    image: ghcr.io/gibe9000/longevity-platform:1.0.2@sha256:59c874a5865854d9ef3547125247d63d11b69c5000e0f6c27ba92be989df7747
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:
