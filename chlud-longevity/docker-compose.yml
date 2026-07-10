@@ -1,0 +1,20 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: chlud-longevity_server_1
+      APP_PORT: 8080
+
+  server:
+    # TODO: replace with your published image (and ideally pin a digest), e.g.
+    # ghcr.io/gibe9000/longevity-platform:1.0.0@sha256:<digest>
+    image: ghcr.io/gibe9000/longevity-platform:1.0.0
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    environment:
+      LONGEVITY_DB: /data/longevity.db
+      TZ: Europe/Copenhagen
+      # Optional: pin your own key instead of the auto-generated one.
+      # LONGEVITY_API_KEY: lgv_change_me_to_something_long_and_random
+      # Optional: fill the dashboard with sample data on first run.
+      # SEED_DEMO: "true"
+    restart: on-failure

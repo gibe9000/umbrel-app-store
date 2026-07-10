@@ -1,0 +1,32 @@
+manifestVersion: 1
+id: chlud-longevity
+name: Longevity
+tagline: Self-hosted health and longevity dashboard
+category: Health
+version: "1.0.0"
+port: 8099
+description: >-
+  Longevity is a private, self-hosted wellness hub for your Umbrel. Connect
+  Zepp/Amazfit, Android Health Connect, smart scale data, daily check-ins, and
+  biomarkers; then view trends, a composite Longevity Score, and agent-friendly
+  API endpoints for tools such as Hermes.
+
+
+  On first start the app prints a primary API key once in its logs — open the
+  app's logs in Umbrel, copy the key, and paste it into the dashboard to sign
+  in. All data stays on your Umbrel in a local SQLite database.
+developer: chlud
+website: https://github.com/gibe9000/longevity-platform
+submitter: chlud
+submission: https://github.com/gibe9000/umbrel-app-store
+repo: https://github.com/gibe9000/longevity-platform
+support: https://github.com/gibe9000/longevity-platform/issues
+gallery: []
+releaseNotes: >-
+  Initial release. FastAPI web dashboard, SQLite persistence under Umbrel app
+  data, API-key authentication, Health Connect/Zepp/smart-scale ingest
+  endpoints, and AI-agent context APIs.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
