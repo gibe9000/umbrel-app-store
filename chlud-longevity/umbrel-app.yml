@@ -3,7 +3,7 @@ id: chlud-longevity
 name: Longevity
 tagline: Self-hosted health and longevity dashboard
 category: Health
-version: "1.0.0"
+version: "1.0.1"
 port: 8099
 description: >-
   Longevity is a private, self-hosted wellness hub for your Umbrel. Connect
@@ -23,9 +23,9 @@ repo: https://github.com/gibe9000/longevity-platform
 support: https://github.com/gibe9000/longevity-platform/issues
 gallery: []
 releaseNotes: >-
-  Initial release. FastAPI web dashboard, SQLite persistence under Umbrel app
-  data, API-key authentication, Health Connect/Zepp/smart-scale ingest
-  endpoints, and AI-agent context APIs.
+  Allow API clients (phone sync via Tasker, AI agents, smart scales) to reach
+  the key-protected /api endpoints directly, without Umbrel's proxy login
+  screen. The web dashboard remains behind Umbrel authentication.
 dependencies: []
 path: ""
 defaultUsername: ""

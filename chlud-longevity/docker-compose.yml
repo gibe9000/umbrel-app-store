@@ -3,6 +3,10 @@ services:
     environment:
       APP_HOST: chlud-longevity_server_1
       APP_PORT: 8080
+      # Let API clients (Tasker phone sync, Hermes, scales) reach the
+      # key-protected API without Umbrel's login screen. The web UI stays
+      # behind Umbrel auth.
+      PROXY_AUTH_WHITELIST: "/api/*"
 
   server:
     image: ghcr.io/gibe9000/longevity-platform:1.0.0@sha256:545e7bb2f66b34540b0d4c45d0765c3a37bcdcbc08ab1e4c9c1eaef9862f00b9
