@@ -13,7 +13,8 @@ services:
       - ${APP_DATA_DIR}/data:/data
       # Share the vault with the official Umbrel Obsidian app: it shows up
       # inside Obsidian at /config/vaults/SecondBrain ("Open folder as vault").
-      - ${APP_DATA_DIR}/../obsidian/data/config/vaults/SecondBrain:/vault
+      # Same cross-app pattern as albyhub/chantools mounting lightning's dir.
+      - ${UMBREL_ROOT}/app-data/obsidian/data/config/vaults/SecondBrain:/vault
       # No Obsidian app on this Umbrel? Use a self-contained vault instead:
       # - ${APP_DATA_DIR}/vault:/vault
     environment:
