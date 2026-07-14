@@ -8,9 +8,7 @@ services:
       PROXY_AUTH_WHITELIST: "/api/*"
 
   server:
-    # Set to your published image before installing, e.g.
-    # ghcr.io/gibe9000/second-brain:1.0.0@sha256:<digest>
-    image: ghcr.io/gibe9000/second-brain:1.0.0
+    image: ghcr.io/gibe9000/second-brain:1.0.0@sha256:a6dd8d47f1f0b198dcd1a621d71077810dfca2fe51484649437fa08572ad9962
     volumes:
       - ${APP_DATA_DIR}/data:/data
       # Share the vault with the official Umbrel Obsidian app: it shows up
