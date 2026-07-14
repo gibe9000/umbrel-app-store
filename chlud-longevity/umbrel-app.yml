@@ -1,5 +1,6 @@
 manifestVersion: 1
 id: chlud-longevity
+icon: https://raw.githubusercontent.com/gibe9000/umbrel-app-store/main/gallery/chlud-longevity/icon.png
 name: Longevity
 tagline: Self-hosted health and longevity dashboard
 category: Health

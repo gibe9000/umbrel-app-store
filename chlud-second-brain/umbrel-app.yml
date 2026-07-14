@@ -1,9 +1,10 @@
 manifestVersion: 1
 id: chlud-second-brain
+icon: https://raw.githubusercontent.com/gibe9000/umbrel-app-store/main/gallery/chlud-second-brain/icon.png
 name: Second Brain
 tagline: Self-hosted LLM wiki your AI agents can add to and recall from
 category: Files
-version: "1.0.0"
+version: "1.0.1"
 port: 8100
 description: >-
   Second Brain is a private, self-hosted knowledge base following Karpathy's
@@ -28,9 +29,12 @@ repo: https://github.com/gibe9000/second-brain
 support: https://github.com/gibe9000/second-brain/issues
 gallery: []
 releaseNotes: >-
-  Initial release: markdown vault with agent API (add, recall, append, pages),
-  SQLite FTS5 full-text search, auto-generated index, operation log,
-  API-key authentication, and a web UI for search, browsing and key management.
+  1.0.1: agents can now retire processed Inbox captures to Archive/ (kept on
+  disk and browsable, but out of the queue and search results), and
+  rename/move pages within Inbox/ and Wiki/ with automatic vault-wide
+  wikilink rewriting. Raw/ sources and bookkeeping pages stay protected.
+  Also fixes duplicated "S - "/"R - " title prefixes when clients include
+  them, and adds the app icon.
 dependencies: []
 path: ""
 defaultUsername: ""
