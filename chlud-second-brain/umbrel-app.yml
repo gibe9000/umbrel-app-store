@@ -1,0 +1,37 @@
+manifestVersion: 1
+id: chlud-second-brain
+name: Second Brain
+tagline: Self-hosted LLM wiki your AI agents can add to and recall from
+category: Files
+version: "1.0.0"
+port: 8100
+description: >-
+  Second Brain is a private, self-hosted knowledge base following Karpathy's
+  LLM-wiki pattern: plain markdown files (fully Obsidian-compatible) plus a
+  small agent API. AI agents such as Hermes add notes with POST /api/v1/notes
+  and recall knowledge with GET /api/v1/recall — full-text search with
+  snippets and wikilink context, or ready-to-inject markdown.
+
+
+  The vault is shared with the official Umbrel Obsidian app: it appears inside
+  Obsidian at /config/vaults/SecondBrain, so agents write over the API while
+  you browse and edit the very same files in Obsidian — no sync involved.
+
+
+  On first start the app prints a primary API key once in its logs — open the
+  app's logs in Umbrel, copy the key, and paste it into the web UI to sign in.
+developer: chlud
+website: https://github.com/gibe9000/second-brain
+submitter: chlud
+submission: https://github.com/gibe9000/second-brain
+repo: https://github.com/gibe9000/second-brain
+support: https://github.com/gibe9000/second-brain/issues
+gallery: []
+releaseNotes: >-
+  Initial release: markdown vault with agent API (add, recall, append, pages),
+  SQLite FTS5 full-text search, auto-generated index, operation log,
+  API-key authentication, and a web UI for search, browsing and key management.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

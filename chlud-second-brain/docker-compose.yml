@@ -1,0 +1,31 @@
+services:
+  app_proxy:
+    environment:
+      APP_HOST: chlud-second-brain_server_1
+      APP_PORT: 8080
+      # Let AI agents (Hermes) reach the key-protected API without Umbrel's
+      # login screen. The web UI stays behind Umbrel auth.
+      PROXY_AUTH_WHITELIST: "/api/*"
+
+  server:
+    # Set to your published image before installing, e.g.
+    # ghcr.io/gibe9000/second-brain:1.0.0@sha256:<digest>
+    image: ghcr.io/gibe9000/second-brain:1.0.0
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+      # Share the vault with the official Umbrel Obsidian app: it shows up
+      # inside Obsidian at /config/vaults/SecondBrain ("Open folder as vault").
+      - ${APP_DATA_DIR}/../obsidian/data/config/vaults/SecondBrain:/vault
+      # No Obsidian app on this Umbrel? Use a self-contained vault instead:
+      # - ${APP_DATA_DIR}/vault:/vault
+    environment:
+      BRAIN_DB: /data/brain.db
+      VAULT_DIR: /vault
+      TZ: Europe/Copenhagen
+      # Match the Obsidian app's user (linuxserver/obsidian defaults) so both
+      # containers can edit the same files.
+      PUID: "1000"
+      PGID: "1000"
+      # Optional: pin your own key instead of the auto-generated one.
+      # BRAIN_API_KEY: sb_change_me_to_something_long_and_random
+    restart: on-failure

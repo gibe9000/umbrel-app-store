@@ -7,6 +7,12 @@ containing:
   dashboard. FastAPI + SQLite, connects Zepp/Amazfit, Android Health Connect
   and smart-scale data, computes a composite Longevity Score, and exposes
   AI-agent-friendly API endpoints.
+- **Second Brain** (`chlud-second-brain`) — self-hosted LLM wiki. Plain
+  markdown vault shared with the official Umbrel Obsidian app, plus an agent
+  API so AI agents (Hermes) can add notes (`POST /api/v1/notes`) and recall
+  knowledge (`GET /api/v1/recall`) with full-text search. **Install the
+  official Obsidian app first** — the vault lives inside its data directory
+  and appears in Obsidian at `/config/vaults/SecondBrain`.
 
 ## Install on Umbrel
 
@@ -27,6 +33,10 @@ Before the app can install, build and push the image referenced in
 # from the Longevity source repo
 docker build -t ghcr.io/gibe9000/longevity-platform:1.0.0 .
 docker push ghcr.io/gibe9000/longevity-platform:1.0.0
+
+# from the Second Brain source repo
+docker build -t ghcr.io/gibe9000/second-brain:1.0.0 .
+docker push ghcr.io/gibe9000/second-brain:1.0.0
 ```
 
 For reproducible installs, pin the image by digest after pushing:
@@ -50,7 +60,11 @@ umbrel-app-store.yml        # store manifest (store id: chlud)
 chlud-longevity/
 ├── umbrel-app.yml          # app manifest
 └── docker-compose.yml      # Umbrel app compose (app_proxy + server)
+chlud-second-brain/
+├── umbrel-app.yml          # app manifest
+└── docker-compose.yml     # Umbrel app compose (app_proxy + server)
 ```
 
 App ids in a community store must be prefixed with the store id — hence
-`chlud-longevity`, and the proxy target hostname `chlud-longevity_server_1`.
+`chlud-longevity` / `chlud-second-brain`, and proxy target hostnames like
+`chlud-longevity_server_1`.
