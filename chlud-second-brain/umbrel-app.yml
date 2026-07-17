@@ -4,7 +4,7 @@ icon: https://raw.githubusercontent.com/gibe9000/umbrel-app-store/main/gallery/c
 name: Second Brain
 tagline: Self-hosted LLM wiki your AI agents can add to and recall from
 category: Files
-version: "1.0.1"
+version: "1.0.2"
 port: 8100
 description: >-
   Second Brain is a private, self-hosted knowledge base following Karpathy's
@@ -29,14 +29,12 @@ repo: https://github.com/gibe9000/second-brain
 support: https://github.com/gibe9000/second-brain/issues
 gallery: []
 releaseNotes: >-
-  1.0.1: agents can now retire processed Inbox captures to Archive/ (kept on
-  disk and browsable, but out of the queue and search results), and
-  rename/move pages within Inbox/ and Wiki/ with automatic vault-wide
-  wikilink rewriting. Raw/ sources and bookkeeping pages stay protected.
-  Smarter recall: natural-language questions now match notes even when only
-  some words appear in the content (relevance-ranked fallback, with titles
-  weighted above body text). Also fixes duplicated "S - "/"R - " title
-  prefixes when clients include them, and adds the app icon.
+  1.0.2: smarter recall. Previously a query only matched notes containing
+  EVERY search word, so natural-language questions from agents often returned
+  nothing unless they hit a title word-for-word. Recall now falls back to
+  relevance-ranked any-word matching when the strict query comes up short,
+  with titles weighted above tags above body text. Precise queries behave
+  exactly as before.
 dependencies: []
 path: ""
 defaultUsername: ""
