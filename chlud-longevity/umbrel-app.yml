@@ -4,7 +4,7 @@ icon: https://raw.githubusercontent.com/gibe9000/umbrel-app-store/main/gallery/c
 name: Longevity
 tagline: Self-hosted health and longevity dashboard
 category: Health
-version: "1.0.3"
+version: "1.0.4"
 port: 8099
 description: >-
   Longevity is a private, self-hosted wellness hub for your Umbrel. Connect
@@ -24,9 +24,11 @@ repo: https://github.com/gibe9000/longevity-platform
 support: https://github.com/gibe9000/longevity-platform/issues
 gallery: []
 releaseNotes: >-
-  Fix step/activity double-counting when several apps write the same metric to
-  Health Connect (e.g. watch and phone pedometer): daily totals are now summed
-  per source app and the highest source wins.
+  1.0.4: tolerant ingest bodies. An empty, blank, or malformed POST body to
+  the ingest endpoints is now a harmless no-op (clean 200) instead of a 422
+  validation error — fixes phone sync setups (e.g. Tasker) that occasionally
+  fire the HTTP request with an empty variable after a failed Health Connect
+  read. Valid payloads ingest exactly as before.
 dependencies: []
 path: ""
 defaultUsername: ""
