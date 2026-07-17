@@ -33,8 +33,10 @@ releaseNotes: >-
   disk and browsable, but out of the queue and search results), and
   rename/move pages within Inbox/ and Wiki/ with automatic vault-wide
   wikilink rewriting. Raw/ sources and bookkeeping pages stay protected.
-  Also fixes duplicated "S - "/"R - " title prefixes when clients include
-  them, and adds the app icon.
+  Smarter recall: natural-language questions now match notes even when only
+  some words appear in the content (relevance-ranked fallback, with titles
+  weighted above body text). Also fixes duplicated "S - "/"R - " title
+  prefixes when clients include them, and adds the app icon.
 dependencies: []
 path: ""
 defaultUsername: ""
