@@ -1,10 +1,11 @@
 manifestVersion: 1
 id: chlud-sillytavern
+icon: https://raw.githubusercontent.com/gibe9000/umbrel-app-store/main/gallery/chlud-sillytavern/icon.png
 name: SillyTavern
 tagline: Power-user frontend for LLMs and AI roleplay
 category: ai
 version: "1.18.0"
-port: 8100
+port: 8101
 description: >-
   SillyTavern is a locally installed, highly customizable frontend for many
   LLM APIs (OpenAI, Claude, KoboldAI, text-generation-webui, Ollama, and more)
