@@ -11,10 +11,19 @@ services:
     image: ghcr.io/sillytavern/sillytavern:1.18.0@sha256:7b30a1698b605d01dbd01a20459600c035f0d2c866912b69d7eee98065dcedd3
     environment:
       NODE_ENV: production
-      # Behind Umbrel's app_proxy the container must bind 0.0.0.0 and NOT
-      # reject the proxy's forwarded (non-localhost) requests.
+      # SillyTavern REFUSES to start when listening on non-localhost with no
+      # whitelist/auth (it aborts -> crash loop). So we keep whitelist mode ON
+      # (satisfies its security check) but whitelist the private Docker ranges
+      # so Umbrel's app_proxy — a sibling container on the app network — is
+      # allowed. Its built-in whitelistDockerHosts only covers the host/gateway,
+      # not sibling containers, which is why that alone isn't enough. Real
+      # access control is Umbrel's login in front of the proxy.
       SILLYTAVERN_LISTEN: "true"
-      SILLYTAVERN_WHITELISTMODE: "false"
+      SILLYTAVERN_WHITELISTMODE: "true"
+      # Trust only the direct socket IP (always the app_proxy), not forwarded
+      # client IPs, so remote/tunnelled access via Umbrel doesn't 403.
+      SILLYTAVERN_ENABLEFORWARDEDWHITELIST: "false"
+      SILLYTAVERN_WHITELIST: '["10.0.0.0/8","172.16.0.0/12","192.168.0.0/16","127.0.0.1"]'
     volumes:
       - ${APP_DATA_DIR}/config:/home/node/app/config
       - ${APP_DATA_DIR}/data:/home/node/app/data
