@@ -1,0 +1,36 @@
+manifestVersion: 1
+id: chlud-sillytavern
+name: SillyTavern
+tagline: Power-user frontend for LLMs and AI roleplay
+category: ai
+version: "1.18.0"
+port: 8100
+description: >-
+  SillyTavern is a locally installed, highly customizable frontend for many
+  LLM APIs (OpenAI, Claude, KoboldAI, text-generation-webui, Ollama, and more)
+  as well as image generation backends. It offers character cards, group chats,
+  world info/lorebooks, extensions, and fine-grained prompt control.
+
+
+  This app runs the official SillyTavern container behind Umbrel's app proxy,
+  so access is protected by your Umbrel login. Configuration, chats, characters,
+  plugins, extensions, and backups are persisted under the app's data directory.
+
+
+  Bring your own API keys (or point it at a local model server on your Umbrel).
+developer: SillyTavern
+website: https://sillytavern.app
+submitter: chlud
+submission: https://github.com/gibe9000/umbrel-app-store
+repo: https://github.com/SillyTavern/SillyTavern
+support: https://github.com/SillyTavern/SillyTavern/issues
+gallery: []
+releaseNotes: >-
+  Packages the official SillyTavern 1.18.0 image for Umbrel. Listens on all
+  interfaces and disables the built-in IP whitelist so it works behind Umbrel's
+  app proxy; data, config, plugins, extensions, and backups persist under app
+  data.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
